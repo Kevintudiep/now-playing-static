@@ -142,6 +142,8 @@ figure {
   Hide the overview on mobile devices
   TIP: Use media queries to reveal it on larger devices
 */
+
+
 .movie-overview {
   display: none;
 }
@@ -194,4 +196,58 @@ figure {
 
 .about > p {
   margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-columns: 10% auto;
+
+  }
+  .movie-overview {
+    display: block;
+  }
+  .site-logo {
+    position: relative;
+  }
+  .site-nav {
+    grid-column: 1/2;
+    position: relative;
+    margin-top: 20px;
+
+  }
+  .site-nav-item {
+    float: none;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .movie-overview {
+    display: none;
+  }
+  .movie-backdrop {
+    display: none;
+  }
+  .movie-poster {
+    display: block;
+  }
+
+  .movie:first-child .movie-overview {
+    display: block;
+  }
+  .movie:first-child .movie-backdrop {
+    display: block;
+  }
+  .movie:first-child .movie-poster {
+    display: none;
+  }
+  .movie:first-child {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
 }
